@@ -4,7 +4,7 @@ const User = require('../models/User')
 const passport = require('passport')
 const {generateToken, verifyToken} = require('../helpers/jwt')
 
-router.get('/private', verifyToken, (req,res,next)=>{
+router.get('/profile', verifyToken, (req,res,next)=>{
     res.send("bienvenido" + req.user.username)
 })
 

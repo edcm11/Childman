@@ -2,13 +2,24 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const playeraSchema = new Schema({
-    user:{
-        type: Schema.Types.ObjectId,
-        ref:"User"
+    name:{
+        type: String,
+        required: true
     },
-    link: String,
+    categoria: {
+        type:String,
+        enum:['Mujer', 'Hombre','Niños'],
+        required: true
+    },
+    tallas: {
+        type:[String],
+        enum:['S','M','L']
+    },
     pictures:[String],
-    price:Number,
+    price:{
+        type:Number,
+        required: true  
+    },
     description:String,
 
 },{
